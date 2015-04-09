@@ -1,0 +1,7 @@
+.site-search-form {
+  @include span-columns(1);
+}
+
+input[type="submit"].site-search-submit {
+  display: none;
+}

@@ -1,0 +1,35 @@
+@mixin debug($colour: red) {
+  border: 1px dotted $colour;
+}
+
+.site-header {
+  @include outer-container;
+  @include debug;
+}
+
+.site-navigation {
+  @include outer-container;
+  @include debug(blue);
+}
+
+.site-navigation-menu {
+  @include span-columns(2);
+
+  @include media($large-screen-up) {
+    @include span-columns(10);
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      @include pad(8px);
+      display: block;
+    }
+  }
+}
+
+.page-content {
+  @include outer-container;
+  @include debug(green);
+}

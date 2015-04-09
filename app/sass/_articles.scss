@@ -1,0 +1,55 @@
+.article-related-products {
+  @include row;
+
+  .product-info-box {
+    @include debug(#ff00ff);
+    @include span-columns(4);
+    @include omega;
+
+    @include media($medium-screen-up) {
+      @include span-columns(4 of 8);
+      @include omega;
+    }
+
+    @include media($large-screen-up) {
+      @include span-columns(2);
+    }
+  }
+}
+
+.article-related-articles {
+  @include row;
+
+  .related-article-info-box {
+    @include debug(green);
+    @include span-columns(4);
+    @include omega;
+
+    @include media($medium-screen-up) {
+      @include span-columns(4 of 8);
+      @include omega;
+    }
+
+    @include media($large-screen-up) {
+      @include span-columns(4);
+    }
+  }
+}
+
+.article-hero {
+  background-image: url('http://placehold.it/1088x320');
+  background-repeat: no-repeat;
+  height: 320px;
+
+  .article-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $large-font-size;
+  }
+
+  .article-subtitle {
+    font-size: $base-font-size * 1.5;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

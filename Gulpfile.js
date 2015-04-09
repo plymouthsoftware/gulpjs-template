@@ -50,7 +50,7 @@ gulp.task('slim', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(config.src.concat('/sass/*.scss'), ['sass']);
+  gulp.watch(config.src.concat('/sass/**/*.scss'), ['sass']);
   gulp.watch(config.src.concat('/*.slim'), ['slim']);
 });
 

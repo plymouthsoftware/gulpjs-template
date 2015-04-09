@@ -1,0 +1,4 @@
+.site-cart-summary {
+  @include span-columns(1);
+  @include omega();
+}
