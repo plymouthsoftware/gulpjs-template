@@ -1,0 +1,7 @@
+@import "bourbon";
+ @import "neat";
+
+body {
+  @include outer-container();
+  border: 2px solid red;
+}
