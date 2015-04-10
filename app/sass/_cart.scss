@@ -1,4 +1,20 @@
 .site-cart-summary {
-  @include span-columns(1);
-  @include omega();
+  @include pad(em(3px) 0 em(12px));
+  display: inline-block;
+
+  color: $bright-colour;
+  font-size: $small-font-size;
+  text-align: right;
+
+  @include media($medium-screen-up) {
+    @include span-columns(2);
+    @include shift(6);
+    @include pad(em(12px));
+  }
+
+  @include media($large-screen-up) {
+    @include span-columns(2);
+    @include shift(0);
+    @include pad(em(6px) em(12px));
+  }
 }

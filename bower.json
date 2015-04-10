@@ -1,0 +1,14 @@
+{
+  "name": "soundunlimited-redesign",
+  "version": "0.1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "~4.3.0"
+  }
+}

@@ -1,7 +1,36 @@
-.site-search-form {
-  @include span-columns(1);
+.site-search-icon {
+  @include pad(0 em(12px) 0 0);
+
+  @include media($medium-screen-up) {
+    display: none;
+  }
 }
 
-input[type="submit"].site-search-submit {
+.site-search-form {
+  @include shift(4);
+  @include span-columns(1);
+  @include pad(em(3px) 0);
+  @include omega;
+
   display: none;
+
+  @include media($medium-screen-up) {
+    @include shift(0);
+    @include span-columns(8);
+    @include pad(em(3px) em(12px));
+
+    display: none;
+  }
+
+  @include media($large-screen-up) {
+    @include span-columns(2 of 12);
+  }
+
+  input[type="search"] {
+    font-size: $small-font-size;
+  }
+
+  input[type="submit"].site-search-submit {
+    display: none;
+  }
 }

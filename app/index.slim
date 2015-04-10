@@ -1,42 +1,47 @@
 doctype html
 html
   head
-    title Hello World
-    link href="css/main.css" rel="stylesheet" type="text/css" /
+    title SoundUnlimited
+    link href="/assets/css/application.css" rel="stylesheet" type="text/css" /
 
+    meta name="viewport" content="initial-scale=1"
   body
     .site-header
-      h1 SoundUnlimited
+      h1.site-title SoundUnlimited
+      img.site-logo src='/assets/images/logo.png' alt='SoundUnlimited Logo'
 
-    .site-navigation
-      form.site-search-form
-        input type='search' name='q' placeholder='Search'
-        input.site-search-submit type='submit' value='Go'
+      .site-navigation
+        form.site-search-form
+          input type='search' name='q' placeholder='Search'
+          input.site-search-submit type='submit' value='Go'
 
-      ul.site-navigation-menu
-        li
-          a href='#' Guitar
-        li
-          a href='#' Drums
-        li
-          a href='#' Leads
-        li
-          a href='#' Accessories
-        li
-          a href='#' Strings
-        li
-          a href='#' Orchestral
-        li
-          a href='#' Reeds
-        li
-          a href='#' Effects
-        li
-          a href='#' Amplifiers
-        li
-          a href='#' Brands
+        ul.site-navigation-menu
+          li
+            a href='#' Guitar
+          li
+            a href='#' Drums
+          li
+            a href='#' Leads
+          li
+            a href='#' Accessories
+          li
+            a href='#' Strings
+          li
+            a href='#' Orchestral
+          li
+            a href='#' Reeds
+          li
+            a href='#' Effects
+          li
+            a href='#' Amplifiers
+          li
+            a href='#' Brands
 
-      .site-cart-summary
-        ' 2 Items
+        i.fa.fa-search.site-search-icon
+
+        .site-cart-summary
+          ' 2 Items
+          i.fa.fa-shopping-cart.fa-lg
 
     .page-content
 
@@ -88,12 +93,12 @@ html
           p
             em Thanks for reading. If you have any questions or queries, please do not hesitate to contact me directly.
 
-      .article-related-products
+      aside.aside.article-related-products
         h2 Related Products
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;6.03
           a.button href="#" Add
@@ -101,7 +106,7 @@ html
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;12.20
           a.button href="#" Add
@@ -109,7 +114,7 @@ html
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;4.75
           a.button href="#" Add
@@ -117,7 +122,7 @@ html
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;12.20
           a.button href="#" Add
@@ -125,7 +130,7 @@ html
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;4.75
           a.button href="#" Add
@@ -133,18 +138,18 @@ html
 
         .product-info-box
           .product-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/320x240'
 
           .product-price &pound;4.75
           a.button href="#" Add
           .product-title D'Addario EJ13 80 20 Bronze Round Wound Acoustic Guitar Strings
 
-      .article-related-articles
+      aside.aside.article-related-articles
         h2 Related Articles
 
         .related-article-info-box
           .article-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/640x480'
 
           .article-excerpt
             p
@@ -157,7 +162,7 @@ html
 
         .related-article-info-box
           .article-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/640x480'
 
           .article-excerpt
             p
@@ -170,7 +175,7 @@ html
 
         .related-article-info-box
           .article-image
-            img src='http://placehold.it/640x320'
+            img src='http://placehold.it/640x480'
 
           .article-excerpt
             p

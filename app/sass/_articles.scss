@@ -1,8 +1,13 @@
+.article {
+  @extend .aside;
+  background: white;
+  color: $base-font-color;
+}
+
 .article-related-products {
   @include row;
 
   .product-info-box {
-    @include debug(#ff00ff);
     @include span-columns(4);
     @include omega;
 
@@ -21,7 +26,6 @@
   @include row;
 
   .related-article-info-box {
-    @include debug(green);
     @include span-columns(4);
     @include omega;
 

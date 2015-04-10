@@ -2,6 +2,9 @@
 @import "base/base";
 @import "neat";
 
+@import "site-variables";
+@import "mixins";
+
 @import "layout";
 @import "search";
 @import "cart";

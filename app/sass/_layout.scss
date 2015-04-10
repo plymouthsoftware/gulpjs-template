@@ -1,35 +1,106 @@
-@mixin debug($colour: red) {
-  border: 1px dotted $colour;
+body {
+  background: $body-background;
+  padding: 0;
+  margin: 0;
+
+  @include media($medium-screen-up) {
+    @include pad(em(24px));
+  }
 }
 
 .site-header {
   @include outer-container;
-  @include debug;
+  @include pad(0 em(24px));
+
+  background: $site-background;
+
+  @include media($medium-screen-up) {
+    @include pad(0);
+  }
+
+  .site-title {
+    display: none;
+  }
+
+  .site-logo {
+    display: block;
+    padding-top: em(18px);
+    margin: 0 auto;
+
+    @include span-columns(2);
+
+    @include media($medium-screen-up) {
+      @include span-columns(2);
+      @include shift(3);
+    }
+
+    @include media($large-screen-up) {
+      @include span-columns(3);
+      @include shift(5);
+    }
+  }
 }
 
 .site-navigation {
   @include outer-container;
-  @include debug(blue);
+  @include pad(em(12px) 0 0 0);
+  color: $bright-colour;
+  text-align: right;
+
+  @include media($medium-screen-up) {
+    clear: both;
+  }
 }
 
 .site-navigation-menu {
   @include span-columns(2);
+  display: none;
+
+  @include media($medium-screen-up) {
+    @include row;
+    @include span-columns(8);
+    @include omega;
+
+    display: table;
+  }
 
   @include media($large-screen-up) {
-    @include span-columns(10);
+    @include outer-container();
+    @include span-columns(8 of 12);
+    display: table;
   }
 
   li {
-    display: inline-block;
+    display: table-cell;
 
-    a {
-      @include pad(8px);
+    a, a:visited {
+      @include pad(6px);
       display: block;
+      text-align: center;
+
+      @include media($medium-screen-up) {
+        font-size: $small-font-size;
+      }
+
+      color: $menu-link-colour;
+
+      &:visited {
+        color: $menu-link-colour;
+      }
+    }
+
+    a:hover {
+      color: $menu-active-colour;
     }
   }
 }
 
 .page-content {
   @include outer-container;
-  @include debug(green);
+}
+
+.aside {
+  @include pad(24px);
+  background: $aside-background;
+  color: $aside-font-colour;
 }
