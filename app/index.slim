@@ -1,11 +1,39 @@
 doctype html
 html
   head
-    title Hello World
-    link href="css/main.css" rel="stylesheet" type="text/css" /
+    title My App
+    link href="assets/css/application.css" rel="stylesheet" type="text/css" /
+
+    meta name="viewport" content="initial-scale=1"
   body
-    h1 Hello World
+    .site-header
+      h1.site-title My App
+      img.site-logo src='assets/images/logo.png' alt='Logo'
 
-    p This is how we roll.
+      .site-navigation
+        form.site-search-form
+          input type='search' name='q' placeholder='Search'
+          input.site-search-submit type='submit' value='Go'
 
-    p As is this.
+        ul.site-navigation-menu
+          li
+            a href='#' Home
+          li
+            a href='#' Products
+          li
+            a href='#' Contact
+
+        i.fa.fa-search.site-search-icon
+
+        .site-cart-summary
+          i.fa.fa-shopping-cart.fa-lg
+
+    .page-content
+      h1 Hello World
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

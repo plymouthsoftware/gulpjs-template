@@ -5,11 +5,19 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     neat = require('node-neat').includePaths,
     slim = require('gulp-slim'),
-    del = require('del');
+    del = require('del'),
+    imgmin = require('gulp-imagemin'),
+    optipng = require('imagemin-optipng'),
+    concat = require('gulp-concat');
 
 var config = {
   src: 'app',
   dest: 'dist'
+}
+
+config.images = {
+  src: config.src.concat('/images'),
+  dest: config.dest.concat('/assets/images'),
 }
 
 gulp.task('clean', function(cb) {
@@ -20,24 +28,30 @@ gulp.task('clean', function(cb) {
 
 gulp.task('serve', function() {
   connect.server({
-    //livereload: true,
     root: config.dest
   });
 });
 
 gulp.task('sass', function() {
   var src = config.src.concat('/sass/**/*.scss'),
-    dest = config.dest.concat('/css');
+    dest = config.dest.concat('/assets/css');
 
-  gulp.src(src)
+  gulp.src(['bower_components/fontawesome/scss/*.scss', src])
     .pipe(sass({
       includePaths: neat
     }))
+    .pipe(concat('application.css'))
     .pipe(gulp.dest(dest))
     .pipe(connect.reload());
 });
 
-gulp.task('slim', function() {
+gulp.task('fonts', function() {
+  gulp.src('bower_components/fontawesome/fonts/*')
+    .pipe(gulp.dest(config.dest.concat('/assets/fonts')))
+    .pipe(connect.reload());
+})
+
+gulp.task('slim', ['fonts'], function() {
   var src = config.src.concat('/**/*.slim'),
     dest = config.dest;
 
@@ -49,9 +63,24 @@ gulp.task('slim', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('watch', function() {
-  gulp.watch(config.src.concat('/sass/*.scss'), ['sass']);
-  gulp.watch(config.src.concat('/*.slim'), ['slim']);
+gulp.task('pngmin', function() {
+  var src = config.images.src.concat('/**/*.png'),
+    dest = config.images.dest;
+
+  gulp.src(src)
+    .pipe(imgmin({
+      use: [optipng({optimizationLevel: 3})]
+    }))
+    .pipe(gulp.dest(dest))
+    .pipe(connect.reload());
 });
 
-gulp.task('default', ['clean', 'sass', 'slim', 'serve', 'watch']);
+gulp.task('watch', function() {
+  gulp.watch(config.src.concat('/sass/**/*.scss'), ['sass']);
+  gulp.watch(config.src.concat('/*.slim'), ['slim']);
+  gulp.watch(config.images.src.concat('/**/*'), ['images']);
+});
+
+gulp.task('images', ['pngmin']);
+
+gulp.task('default', ['clean', 'sass', 'images', 'slim', 'serve', 'watch']);

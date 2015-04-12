@@ -1,7 +1,15 @@
 @import "bourbon";
- @import "neat";
+/* @import "base/base"; /* Uncomment if using refills.bourbon.io */
+@import "neat";
 
-body {
-  @include outer-container();
-  border: 2px solid red;
-}
+/*
+ * Add your external SASS files here...
+ */
+@import "layout";
+
+/*
+@import "site-variables";
+@import "mixins";
+...
+*/
+
