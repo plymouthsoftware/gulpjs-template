@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     optipng = require('imagemin-optipng'),
     concat = require('gulp-concat'),
     jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    jscs = require('gulp-jscs');
 
 var config = {
   src: 'app',
@@ -33,6 +34,13 @@ gulp.task('serve', function() {
     root: config.dest
   });
 });
+
+gulp.task('jscs', function() {
+  var src = config.src.concat('/javascript/*.js');
+
+  gulp.src(src)
+    .pipe(jscs());
+})
 
 gulp.task('lint', function() {
   var src = config.src.concat('/javascript/*.js');
@@ -104,6 +112,6 @@ gulp.task('watch', function() {
 
 gulp.task('images', ['pngmin']);
 
-gulp.task('build', ['clean', 'lint', 'minify', 'sass', 'images', 'slim', 'serve', 'watch'])
+gulp.task('build', ['clean', 'lint', 'jscs', 'minify', 'sass', 'images', 'slim', 'serve', 'watch'])
 
 gulp.task('default', ['build']);

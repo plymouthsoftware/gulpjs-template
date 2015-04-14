@@ -3,7 +3,7 @@
  */
 
 function hello(msg) {
-  console.log('Hello ' + msg);
+    console.log('Hello ' + msg);
 }
 
-hello( 'World' );
+hello('World');
