@@ -4,6 +4,10 @@
 
 ## Usage
 
+Requirements
+
+    $ npm install -g jscs jshint
+
 Download and install:
 
     $ git clone git@github.com:plymouthsoftware/gulpjs-template.git
